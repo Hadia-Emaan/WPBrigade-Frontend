@@ -1,0 +1,1396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #012c1f;
+  overflow-x: hidden;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.nav p {
+  text-align: center;
+  padding: 12px;
+  width: 100%;
+
+}
+
+p a {
+  color: green;
+}
+
+.nav img {
+  padding: 4px;
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-right: 14px;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+  height: auto;
+  background-color: #012c1f;
+  position: sticky;
+  top: 0;
+  /* or height of the nav above it */
+  z-index: 1001;
+  /* higher than nav */
+
+}
+
+
+.logo-icon {
+  width: 150px;
+  height: auto;
+  margin: 12px;
+}
+
+.menu-icon {
+  display: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+
+}
+
+.btn {
+  display: flex;
+  gap: 10px;
+  margin-right: 40px;
+}
+
+.btn1,
+.btn2 {
+  background-color: #217f40;
+  outline: none;
+  border: 0;
+  color: white;
+  width: 150px;
+  height: 39px;
+  cursor: pointer;
+}
+
+.btn2 {
+  background-color: #08512d;
+}
+
+.search-bar {
+  background-color: #08512d;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 50px;
+  /* or height of the nav above it */
+  z-index: 1001;
+  /* higher than nav */
+}
+
+.p {
+  display: flex;
+  color: white;
+  gap: 25px;
+  padding: 16px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.search-container {
+  position: relative;
+  width: 250px;
+  margin-right: 50px;
+}
+
+.search {
+  width: 100%;
+  height: 30px;
+  padding: 5px 35px 5px 10px;
+  border: none;
+  outline: none;
+  background-color: #012c1f;
+  color: white;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.search-container img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.home-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1b7d3b;
+  height: 80px;
+
+}
+
+.home-bar h1 {
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1;
+  padding-left: 35px;
+  margin: 0;
+  width: 80%;
+}
+
+.right-half {
+  width: 30%;
+  background-color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 35px;
+}
+
+.partnership {
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.partnership p {
+  font-size: 14px;
+  color: #1b7d3b;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.partnership img {
+  height: 25px;
+  width: auto;
+}
+
+.video-hero {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background: url('./Slicing/hero-bg.png') no-repeat center center/cover;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 44, 31, 0.6);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 60px;
+  color: white;
+}
+
+.left {
+  max-width: 50%;
+}
+
+.left h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.left p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.right img {
+  width: 280px;
+  height: auto;
+  margin-right: 70px;
+}
+
+.video-container {
+  position: relative;
+  display: inline-block;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+.play-icon img {
+  width: 65px;
+  height: 65px;
+  border-radius: 35px;
+  background-color: #012c1f;
+  opacity: 90%;
+  cursor: pointer;
+  padding: 15px 15px;
+}
+
+
+.gallery-cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+.image-gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 150px;
+  background-color: #012c1f;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.image-gallery img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid #35554b;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+
+}
+
+.arrow img {
+
+  object-fit: contain;
+  display: block;
+}
+.video-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Controls wrap */
+.video-bg-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index:10;
+}
+
+/* Arrow icons */
+.video-bg-controls .arrow-icon {
+  position: absolute;
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Positioning left and right arrows */
+.video-bg-controls .left-arrow {
+  left: 20px;
+}
+
+.video-bg-controls .right-arrow {
+  right: 20px;
+}
+
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.video-content {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.video-content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: white;
+  color: black;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 4px 10px;
+  font-weight: bold;
+}
+
+
+.image-gallery .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  width: 20px;
+  height: 40px;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+
+.card img {
+  width: 100%;
+  height: auto;
+  /* or set a fixed height if needed */
+  display: block;
+  object-fit: cover;
+  /* optional: crops image nicely */
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.card {
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(45% - 25px);
+  height: 400px;
+  background-color: #1b7d3b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* pushes button to bottom */
+}
+
+
+
+.card-text .text {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.card-text {
+  color: white;
+}
+
+.card-text .heading {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.card button {
+  background-color: #08512d;
+  padding: 10px;
+  font-weight: 500;
+  width: 100%;
+  color: white;
+  border: none;
+  outline: none;
+  margin-top: auto;
+  /* ensures it stays at bottom if extra space */
+}
+
+.side-card {
+  width: 250px;
+  background-color: #1b7d3b;
+  color: white;
+}
+
+.heading-card {
+  color: white;
+
+  background-color: #08512d;
+  padding: 12px;
+}
+
+.event-info hr {
+  width: 120px;
+  border: none;
+  border-top: 1px solid #ffffff50;
+  /* Light grey line */
+  margin: 4px 0;
+  /* Space around the line */
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 12px;
+  margin: 20px 0;
+}
+
+.event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.event-number {
+  background-color: white;
+  color: #1b7d3b;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border: 2px solid #217f40;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.event-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+.event-location {
+  font-size: 13px;
+  color: white;
+  margin: 0;
+}
+
+.zig-zag {
+  display: flex;
+  align-content: center;
+  justify-items: center;
+  height: 400px;
+  width: 68%;
+  overflow: hidden;
+  margin: 0 60px;
+}
+
+.zig-zag:first-of-type {
+  margin-top: 40px;
+}
+
+
+
+/* Shared styles */
+.zig-img,
+.zig-bg1,
+.zig-bg2 {
+  width: 50%;
+  height: 100%;
+}
+
+/* Image Styling */
+.zig-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* First block bg style */
+.zig-bg1 {
+  background-color: #217f40;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Second block bg style — same as above */
+.zig-bg2 {
+  background-color: #08512d;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.input {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  width: 50%;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+
+}
+
+.field label {
+  margin-bottom: 9px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.newsletter {
+  background-color: #08512d;
+  margin-top: 40px;
+  height: 600px;
+}
+
+.newsletter p {
+  text-align: center;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Full-width for textarea row */
+.full {
+  width: 30%;
+
+}
+
+/* Gender Row */
+.gender-row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: 600;
+
+}
+
+.gender {
+  display: flex;
+  gap: 30px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.gender input[type="radio"] {
+  accent-color: green;
+  transform: scale(1.5);
+}
+
+.gender label {
+  color: white;
+
+}
+
+.field label {
+  color: white;
+}
+
+#message {
+  border-radius: 0;
+}
+
+.field input {
+  border-radius: 0;
+}
+
+/* Center submit button */
+.submit-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#state {
+  border-radius: 0;
+}
+
+.submit-btn {
+  background-color: #012c1f;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.footer {
+  width: 100%;
+  background-color: #012c1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 12px;
+  /* space between rows */
+}
+
+.footer .p {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer p {
+  color: white;
+  font-weight: 500;
+  margin: 0;
+  font-style: italic;
+}
+
+.footer .icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.copyright {
+  color: white;
+  font-weight: lighter;
+  font-size: 12px;
+  margin-top: 12px;
+  font-weight: 100;
+
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #08512d;
+  width: 100%;
+  position: absolute;
+  margin-top: 60px;
+  top: 170px;
+  left: 0;
+  padding: 20px;
+  z-index: 100;
+  height: 100%;
+}
+
+/* Mobile CSS */
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu li {
+  list-style: none;
+  margin: 10px 0;
+  text-align: start;
+  padding: 12px;
+}
+
+.mobile-menu li a {
+  display: block; /* important for full clickable area */
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu li a:hover {
+  background-color: #1b7d3b; /* this will show on hover only */
+}
+
+.search-container-mb {
+  display: none;
+}
+
+
+@media (max-width:768px) {
+ .nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.logo-div {
+  display: flex;
+  flex-wrap: wrap;               /* ✅ allows wrapping */
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  padding: 12px 20px;
+  gap: 10px;
+}
+
+
+  .logo-icon {
+    width: 130px;
+  }
+
+  .menu-icon {
+  display: block;
+  position: static;  /* Let flexbox handle it */
+  width: 50px;
+  height: 35px;
+  cursor: pointer;
+}
+
+
+  .btn {
+    flex-direction: row;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0;
+  }
+  .video-bg-controls{
+    display: none;
+  }
+
+  .btn1,
+  .btn2 {
+    width: 50%;
+    margin: 0 !important;
+    border-radius: 0;
+  }
+
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  .search-container-mb {
+    display: none;
+    position: absolute;
+    background-color: #08512d;
+    top: 170px;
+    width: 100%;
+    z-index: 200;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-container-mb input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #012c1f;
+    color: white;
+    border: none;
+    height: 50px;
+
+  }
+
+  .search-container-mb img {
+    margin-left: 10px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .search-container-mb.active {
+    display: flex;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .home-bar {
+    display: none;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  .video-hero {
+    height: auto;
+    /* allow height to grow based on content */
+  }
+
+  .content {
+    flex-direction: column;
+    /* stack vertically */
+    align-items: center;
+    /* center horizontally */
+    text-align: center;
+    /* center text */
+    padding: 20px;
+    gap: 20px;
+    /* spacing between image and text */
+    height: auto;
+    /* allow height to adjust */
+  }
+
+  /* Make image container come first */
+  .right {
+    order: 1;
+    /* image on top */
+    width: 100%;
+    /* full width */
+    margin: 0 0 15px 0;
+    /* space below image */
+  }
+
+  /* Text container comes after */
+  .left {
+    order: 2;
+    /* text below image */
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .right img {
+    width: 100%;
+    /* responsive full width */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .left h1,
+  .left p {
+    text-align: start;
+    /* center text on mobile */
+  }
+
+  .left h1 {
+    font-size: 22px;
+  }
+
+  .left p {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+
+  .video-container {
+    width: 100%;
+    /* full width video container */
+    height: auto;
+    position: relative;
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .image-gallery {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  /* 2. Show only one image in gallery */
+  .image-gallery img {
+    display: none;
+
+  }
+
+  .image-gallery img:nth-of-type(2) {
+    display: block;
+    width: 90%;
+    /* Or 100% for full width */
+    height: auto;
+    object-fit: cover;
+
+  }
+
+
+  /* Hide arrows in image gallery */
+  .image-gallery .arrow {
+    display: none;
+  }
+
+
+
+  .cards .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  /* Move side-card below zig-zag */
+  .gallery-cards-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* Side card full width and margin spacing */
+  .side-card {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Optional: Adjust heading and event styles for mobile */
+  .heading-card {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .event-list {
+    gap: 10px;
+  }
+
+  .zig-zag {
+    flex-direction: column;
+    align-items: center;
+    /* Horizontally center children */
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    /* adds equal space around */
+    height: auto;
+    margin: 20px 0;
+    text-align: center;
+    /* Center text inside content block */
+  }
+
+  .zig-img,
+  .zig-bg1,
+  .zig-bg2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .zig-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .zig-bg1,
+  .zig-bg2 {
+    align-items: center;
+    /* center content inside the box */
+    text-align: center;
+  }
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centers items horizontally */
+    justify-content: center;
+    /* centers items vertically (optional) */
+    width: 100%;
+    padding: 20px 15px;
+    /* spacing inside */
+    gap: 20px;
+    /* space between children */
+    height: auto;
+  }
+
+  .newsletter .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .newsletter .input {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    /* Remove any extra padding */
+    gap: 20px;
+  }
+
+  .newsletter .field {
+    width: 100%;
+    max-width: 400px;
+    /* optional max width */
+    margin: 0 auto;
+  }
+
+  .row.gender-row {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    /* smaller gap between label and radios */
+    width: auto;
+    /* remove fixed width to avoid extra space */
+    margin: 0;
+    /* remove any default margin */
+    padding: 0;
+    /* remove padding */
+  }
+
+  .gender-row>label {
+    min-width: 70px;
+    /* fixed label width for alignment */
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gender {
+    display: flex;
+    gap: 15px;
+    /* small gap between radios */
+    align-items: start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gender label {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    /* prevent line-break in radio labels */
+  }
+
+  .gender input[type="radio"] {
+    accent-color: green;
+    transform: scale(1.3);
+    margin-right: 5px;
+  }
+
+  .footer {
+    position: relative;
+    z-index: 10;
+    /* ensure footer is above anything else */
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .footer .p {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer .icons {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    /* allow icons to wrap */
+  }
+
+  .footer .icons img {
+    width: auto;
+    /* smaller icons for mobile */
+    height: auto;
+  }
+
+  .copyright {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* ✅ Show only first 3 images in gallery */
+  .image-gallery img {
+    display: none;
+  }
+
+  .image-gallery img:nth-of-type(2),
+  .image-gallery img:nth-of-type(3),
+  .image-gallery img:nth-of-type(4) {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  .video-bg-controls{
+    display: none;
+  }
+
+  .image-gallery .arrow {
+    display: none;
+  }
+
+  /* ✅ 2 cards in first row, 1 card in second row */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+
+  .cards .card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+
+  /* ✅ Keep side card layout as it is */
+  .gallery-cards-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 40px;
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .side-card {
+    width: 250px;
+  }
+
+  /* Optional: Reduce .content padding in hero section */
+  .content {
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left,
+  .right {
+    max-width: 100%;
+    width: 100%;
+    text-align: start;
+  }
+
+  .right img {
+    margin: 0 auto;
+  }
+
+  /* Zig-zag blocks stack vertically */
+  .zig-zag {
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+    height: auto;
+  }
+
+  .zig-img,
+  .zig-bg1,
+  .zig-bg2 {
+    width: 65%;
+    height: auto;
+  }
+
+  .zig-bg1,
+  .zig-bg2 {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Newsletter */
+ .newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* ✅ already good */
+  justify-content: center;     /* ✅ already good */
+  width: 100%;
+  padding: 20px 15px;
+  gap: 20px;
+  height: auto;
+}
+
+.newsletter .row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+ .newsletter .input {
+  max-width: 600px;            /* ✅ ensures it doesn't stretch too wide */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  gap: 20px;
+}
+
+.newsletter .field {
+  width: 100%;
+  max-width: 600px;  /* Adjust width for balance */
+  margin: 0 auto;
+}
+}
+
+
+/* =============== Sticky Bars on Desktop =============== */
+
+@media (min-width: 1025px) {
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+  }
+
+  .logo-div {
+    position: sticky;
+    top: 50px; /* height of .nav */
+    z-index: 1001;
+    height: 75px; /* match your actual height */
+  }
+
+  .search-bar {
+    position: sticky;
+    top: 125px; /* 50 (nav) + 75 (logo-div) */
+    z-index: 1002;
+    height: 65px;
+  }
+
+/* =============== Sticky Bars on Desktop =============== */
+
+@media (min-width: 1025px) {
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+  }
+
+  .logo-div {
+    position: sticky;
+    top: 50px; /* height of .nav */
+    z-index: 1001;
+    height: 75px; /* match your actual height */
+  }
+
+  .search-bar {
+    position: sticky;
+    top: 125px; /* 50 (nav) + 75 (logo-div) */
+    z-index: 1002;
+    height: 65px;
+  }
+
+
+}
+
+}
+
