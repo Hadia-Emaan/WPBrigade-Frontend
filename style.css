@@ -625,7 +625,7 @@ background-color: #08512d;
 /* ✅ Inner wrapping for standard layout */
 .zig-zag-container {
   display: flex;
-  width: 100%;
+  width: 75%;
   height: 100%;
   gap: 0;
 }
@@ -644,7 +644,6 @@ background-color: #08512d;
   margin: 0;
 }
 
-/* ✅ Regular zig-zag (already working fine) */
 /* ✅ Regular zig-zag (already working fine) */
 .clipped-left {
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
@@ -666,16 +665,6 @@ background-color: #08512d;
 }
 
 
-/* ✅ Reverse zig-zag */
-.zig-zag.reverse .clipped-left {
-  /* text block (left): straight on left, clipped on right */
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
-}
-
-.zig-zag.reverse .clipped-right {
-  /* image block (right): clipped on left, straight on right */
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
-}
 
 
 /* ✅ Image block styles */
@@ -697,7 +686,7 @@ background-color: #08512d;
 
 /* ✅ Inner content */
 .zig-inner {
-  max-width: 500px;
+  max-width: 400px;
   padding: 40px;
   box-sizing: border-box;
   color: white;
