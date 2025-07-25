@@ -32,7 +32,7 @@ body {
 }
 
 p a {
-  color: white;
+  color: green;
   text-decoration: none;
 }
 
@@ -274,11 +274,6 @@ background-color: #08512d;
 .slide-indicator .bar.active {
   background-color: #ffffff;
 }
-
-.slide-indicator {
-  border: 1px solid red;
-}
-
 
 
 
@@ -632,6 +627,7 @@ background-color: #08512d;
   display: flex;
   width: 100%;
   height: 100%;
+  gap: 0;
 }
 
 /* ✅ Common styles for image & text blocks */
@@ -641,8 +637,15 @@ background-color: #08512d;
   height: 100%;
   overflow: hidden;
 }
+.zig-text,
+.zig-img {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-/* ✅ Section 1 Clipping */
+/* ✅ Regular zig-zag (already working fine) */
+/* ✅ Regular zig-zag (already working fine) */
 .clipped-left {
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 }
@@ -651,14 +654,29 @@ background-color: #08512d;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-/* ✅ Section 2 reversed cuts */
+/* ✅ Reverse zig-zag */
 .zig-zag.reverse .clipped-left {
-  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+  /* text block (left): straight on left, clipped on right */
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
 }
 
 .zig-zag.reverse .clipped-right {
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  /* image block (right): clipped on left, straight on right */
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
 }
+
+
+/* ✅ Reverse zig-zag */
+.zig-zag.reverse .clipped-left {
+  /* text block (left): straight on left, clipped on right */
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.zig-zag.reverse .clipped-right {
+  /* image block (right): clipped on left, straight on right */
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
 
 /* ✅ Image block styles */
 .zig-img img {
@@ -1013,12 +1031,26 @@ textarea {
     position: relative;
   }
 
-  .play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.play-icon {
+  width: 60px;                  /* Adjust size as needed */
+  height: 60px;
+  border-radius: 50%;          /* Makes it circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional for depth */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;                 /* Ensure it's above the video thumbnail */
+}
+.play-icon img {
+  width: 25px; /* or adjust as needed */
+  height: 25px;
+}
+
 
   .video-bg-controls {
     display: none;
@@ -1072,35 +1104,81 @@ textarea {
   }
 
   /* ====== ZIG-ZAG SECTION ====== */
-  .zig-zag {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
-    height: auto;
-    margin: 20px 0;
-    text-align: center;
-  }
+/* ====== ZIG-ZAG SECTION (Mobile) ====== */
+.zig-zag,
+.zig-zag.reverse {
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  gap: 15px;
+}
 
-  .zig-img,
-  .zig-bg1,
-  .zig-bg2 {
-    width: 100%;
-    height: auto;
-  }
+.zig-zag-container,
+.zig-zag.reverse {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
 
-  .zig-img img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+.zig-img,
+.zig-text {
+  width: 100%;
+  height: auto;
+}
 
-  .zig-bg1,
-  .zig-bg2 {
-    align-items: center;
-    text-align: center;
-  }
+.zig-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: Remove clip shapes on mobile for clean layout */
+.clipped-left,
+.clipped-right {
+  clip-path: none !important;
+}
+
+
+/* Inner content styling */
+.zig-inner {
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.zig-inner h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.zig-inner p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.zig-zag,
+.zig-zag.reverse {
+  gap: 0; /* ✅ Remove gap between children */
+}
+
+.zig-zag-container {
+  gap: 0; /* ✅ Remove vertical space between image and text */
+}
+
+/* Optional: Remove bottom margin from image or top margin from text */
+.zig-img img {
+  margin-bottom: 0;
+  display: block;
+}
+
+.zig-inner {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 
   /* ====== CARDS & SIDE CARD ====== */
   .cards .card {
@@ -1285,7 +1363,7 @@ textarea {
   /* ✅ Gallery Cards Layout */
   .gallery-cards-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;              /* Side-by-side layout */
     align-items: flex-start;
     gap: 40px;
     padding: 40px;
@@ -1295,40 +1373,38 @@ textarea {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
-  /* ✅ Cards Grid: 2 in first row, 1 in second */
   .cards {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: flex-start; /* ensures left alignment */
   }
 
   .cards .card {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
   }
 
-  .cards .card:nth-child(3) {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-
+  /* 📌 Side Card */
   .side-card {
     width: 250px;
+    flex-shrink: 0;
   }
-
-  /* ✅ Image Gallery: Show 3 specific images */
-  .image-gallery {
+.image-gallery {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    gap: 12px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     align-items: center;
   }
 
   .image-gallery img {
+    display: none;
+  }
+    .image-gallery .arrow {
     display: none;
   }
 
@@ -1345,6 +1421,8 @@ textarea {
   .image-gallery .arrow {
     display: none;
   }
+
+
 
   /* ✅ Zig-zag Layout (Image Left, Text Right) */
   .zig-zag {
