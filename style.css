@@ -6,9 +6,13 @@
 }
 
 body {
+  background-image: url('./Slicing/pattern-bg.png'); /* Replace with your file */
+  background-repeat: repeat; /* Repeats the image to cover full screen */
+  background-size: auto;     /* You can also try 'contain' or 'cover' */
+  background-position: center;
   background-color: #012c1f;
-  overflow-x: hidden;
 }
+
 
 .nav {
   position: sticky;
@@ -28,7 +32,8 @@ body {
 }
 
 p a {
-  color: green;
+  color: white;
+  text-decoration: none;
 }
 
 .nav img {
@@ -49,6 +54,10 @@ p a {
   width: 100%;
   height: auto;
   background-color: #012c1f;
+    background-image: url('./Slicing/pattern-bg.png'); /* Replace with your file */
+  background-repeat: repeat; /* Repeats the image to cover full screen */
+  background-size: auto;     /* You can also try 'contain' or 'cover' */
+  background-position: center;
   position: sticky;
   top: 0;
   /* or height of the nav above it */
@@ -71,6 +80,31 @@ p a {
   cursor: pointer;
 
 }
+.nav-btn {
+  display: inline-block;
+  transform: skew(-16deg);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 12px;
+margin: 0;
+}
+
+/* Unskew the text inside */
+.nav-btn span {
+  display: inline-block;
+  transform: skew(16deg);
+}
+
+/* Hover effect */
+.nav-btn:hover {
+  background-color: #1b7d3b;
+  padding: 12px;
+  margin: 0;
+}
+
 
 .btn {
   display: flex;
@@ -80,18 +114,28 @@ p a {
 
 .btn1,
 .btn2 {
-  background-color: #217f40;
-  outline: none;
-  border: 0;
+  transform: skew(-16deg);
+  padding: 15px 30px;
+  border: none;
   color: white;
-  width: 150px;
-  height: 39px;
+  background-color: #1b7d3b; /* Keeps your existing color */
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Optional: make inner text straight (not skewed) */
+.btn1 span,
+.btn2 span {
+  display: inline-block;
+  transform: skew(16deg);
+  font-style: normal
 }
 
 .btn2 {
-  background-color: #08512d;
+background-color: #08512d;
 }
+
 
 .search-bar {
   background-color: #08512d;
@@ -99,6 +143,10 @@ p a {
   width: 100%;
   display: flex;
   align-items: center;
+    background-image: url('./Slicing/pattern-bg.png'); /* Replace with your file */
+  background-repeat: repeat; /* Repeats the image to cover full screen */
+  background-size: auto;     /* You can also try 'contain' or 'cover' */
+  background-position: center;
   justify-content: space-between;
   position: sticky;
   top: 50px;
@@ -114,7 +162,6 @@ p a {
   padding: 16px 35px;
   font-size: 16px;
   font-weight: 600;
-  font-style: italic;
 }
 
 .search-container {
@@ -165,14 +212,18 @@ p a {
 }
 
 .right-half {
+  position: relative;
   width: 30%;
   background-color: white;
   height: 100%;
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 35px;
+  z-index: 1;
 }
+
 
 .partnership {
   display: flex;
@@ -201,6 +252,35 @@ p a {
   background: url('./Slicing/hero-bg.png') no-repeat center center/cover;
   overflow: hidden;
 }
+
+/* Slide Indicator Container */
+.slide-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+/* Individual Bars */
+.slide-indicator .bar {
+  width: 40px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+/* Active Bar Style */
+.slide-indicator .bar.active {
+  background-color: #ffffff;
+}
+
+.slide-indicator {
+  border: 1px solid red;
+}
+
+
+
 
 .overlay {
   position: absolute;
@@ -267,8 +347,6 @@ p a {
   cursor: pointer;
   padding: 15px 15px;
 }
-
-
 .gallery-cards-wrapper {
   display: flex;
   justify-content: space-between;
@@ -285,18 +363,19 @@ p a {
   gap: 10px;
   height: 150px;
   background-color: #012c1f;
+    background-image: url('./Slicing/pattern-bg.png'); /* Replace with your file */
+  background-repeat: repeat; /* Repeats the image to cover full screen */
+  background-size: auto;     /* You can also try 'contain' or 'cover' */
+  background-position: center;
   width: 100%;
   overflow: hidden;
 }
-
-
 .image-gallery img {
   width: 120px;
   height: 120px;
   object-fit: cover;
   border: 4px solid #35554b;
 }
-
 .arrow {
   position: absolute;
   top: 50%;
@@ -312,11 +391,8 @@ p a {
   margin: 0;
   background: none;
   border: none;
-
 }
-
 .arrow img {
-
   object-fit: contain;
   display: block;
 }
@@ -327,7 +403,6 @@ p a {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-
 /* Controls wrap */
 .video-bg-controls {
   position: absolute;
@@ -337,7 +412,6 @@ p a {
   transform: translateY(-50%);
   z-index:10;
 }
-
 /* Arrow icons */
 .video-bg-controls .arrow-icon {
   position: absolute;
@@ -345,7 +419,6 @@ p a {
   height: auto;
   cursor: pointer;
 }
-
 /* Positioning left and right arrows */
 .video-bg-controls .left-arrow {
   left: 20px;
@@ -465,12 +538,13 @@ p a {
 .card button {
   background-color: #08512d;
   padding: 10px;
-  font-weight: 500;
+  font-weight: 600;
   width: 100%;
   color: white;
   border: none;
   outline: none;
   margin-top: auto;
+  cursor: pointer;
   /* ensures it stays at bottom if extra space */
 }
 
@@ -541,32 +615,52 @@ p a {
   color: white;
   margin: 0;
 }
-
+/* Outer wrapper for alignment */
+/* ✅ Main container style */
 .zig-zag {
-  display: flex;
-  align-content: center;
-  justify-items: center;
+  width: 100%;
   height: 400px;
-  width: 68%;
+  display: flex;
+  padding: 0 60px;
+  margin: 0 auto;
+  box-sizing: border-box;
   overflow: hidden;
-  margin: 0 60px;
 }
 
-.zig-zag:first-of-type {
-  margin-top: 40px;
-}
-
-
-
-/* Shared styles */
-.zig-img,
-.zig-bg1,
-.zig-bg2 {
-  width: 50%;
+/* ✅ Inner wrapping for standard layout */
+.zig-zag-container {
+  display: flex;
+  width: 100%;
   height: 100%;
 }
 
-/* Image Styling */
+/* ✅ Common styles for image & text blocks */
+.zig-img,
+.zig-text {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ✅ Section 1 Clipping */
+.clipped-left {
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.clipped-right {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* ✅ Section 2 reversed cuts */
+.zig-zag.reverse .clipped-left {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+.zig-zag.reverse .clipped-right {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* ✅ Image block styles */
 .zig-img img {
   width: 100%;
   height: 100%;
@@ -574,27 +668,25 @@ p a {
   display: block;
 }
 
-/* First block bg style */
-.zig-bg1 {
-  background-color: #217f40;
+/* ✅ Text block styling */
+.zig-text {
+  background-color: #165f39;
   color: white;
-  padding: 40px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
 }
 
-/* Second block bg style — same as above */
-.zig-bg2 {
-  background-color: #08512d;
-  color: white;
+/* ✅ Inner content */
+.zig-inner {
+  max-width: 500px;
   padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  box-sizing: border-box;
+  color: white;
 }
+
+
+
 
 .input {
   margin-top: 12px;
@@ -638,6 +730,10 @@ textarea {
 
 .newsletter {
   background-color: #08512d;
+    background-image: url('./Slicing/pattern-bg.png'); /* Replace with your file */
+  background-repeat: repeat; /* Repeats the image to cover full screen */
+  background-size: auto;     /* You can also try 'contain' or 'cover' */
+  background-position: center;
   margin-top: 40px;
   height: 600px;
 }
@@ -720,12 +816,16 @@ textarea {
 .footer {
   width: 100%;
   background-color: #012c1f;
+    background-image: url('./Slicing/pattern-bg.png'); /* Replace with your file */
+  background-repeat: repeat; /* Repeats the image to cover full screen */
+  background-size: auto;     /* You can also try 'contain' or 'cover' */
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
   gap: 12px;
-  /* space between rows */
+  
 }
 
 .footer .p {
@@ -735,18 +835,34 @@ textarea {
   justify-content: center;
 }
 
-.footer p {
+.footer p a {
   color: white;
-  font-weight: 500;
   margin: 0;
-  font-style: italic;
+  font-style: bold;
+}
+
+.footer .p p {
+  position: relative;
+}
+
+.footer .p p:not(:last-child)::after {
+  content: "/";
+  color: white;
+  margin: 0 8px;
 }
 
 .footer .icons {
   display: flex;
   gap: 16px;
   justify-content: center;
+  cursor: pointer;
 }
+
+.footer .icons img {
+  width: 20px;   
+  height: 20px;  
+}
+
 
 .copyright {
   color: white;
@@ -802,58 +918,44 @@ textarea {
 }
 
 
-@media (max-width:768px) {
- .nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 50px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-}
-.logo-div {
-  display: flex;
-  flex-wrap: wrap;               /* ✅ allows wrapping */
-  align-items: center;
-  justify-content: space-between;
-  height: auto;
-  padding: 12px 20px;
-  gap: 10px;
-}
+@media (max-width: 768px) {
+  /* ====== NAVIGATION ====== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
 
+  .logo-div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 12px 20px;
+    gap: 10px;
+  }
 
   .logo-icon {
     width: 130px;
   }
 
   .menu-icon {
-  display: block;
-  position: static;  /* Let flexbox handle it */
-  width: 50px;
-  height: 35px;
-  cursor: pointer;
-}
-
-
-  .btn {
-    flex-direction: row;
-    width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-    gap: 0;
+    display: block;
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
   }
-  .video-bg-controls{
+
+  .search-bar,
+  .search-container,
+  .home-bar {
     display: none;
   }
-
-  .btn1,
-  .btn2 {
-    width: 50%;
-    margin: 0 !important;
-    border-radius: 0;
-  }
-
 
   .mobile-menu {
     display: none;
@@ -883,7 +985,6 @@ textarea {
     color: white;
     border: none;
     height: 50px;
-
   }
 
   .search-container-mb img {
@@ -901,82 +1002,13 @@ textarea {
     display: flex;
   }
 
-  .search-bar {
-    display: none;
-  }
-
-  .home-bar {
-    display: none;
-  }
-
-  .search-container {
-    display: none;
-  }
-
+  /* ====== HERO / VIDEO SECTION ====== */
   .video-hero {
     height: auto;
-    /* allow height to grow based on content */
   }
-
-  .content {
-    flex-direction: column;
-    /* stack vertically */
-    align-items: center;
-    /* center horizontally */
-    text-align: center;
-    /* center text */
-    padding: 20px;
-    gap: 20px;
-    /* spacing between image and text */
-    height: auto;
-    /* allow height to adjust */
-  }
-
-  /* Make image container come first */
-  .right {
-    order: 1;
-    /* image on top */
-    width: 100%;
-    /* full width */
-    margin: 0 0 15px 0;
-    /* space below image */
-  }
-
-  /* Text container comes after */
-  .left {
-    order: 2;
-    /* text below image */
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .right img {
-    width: 100%;
-    /* responsive full width */
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .left h1,
-  .left p {
-    text-align: start;
-    /* center text on mobile */
-  }
-
-  .left h1 {
-    font-size: 22px;
-  }
-
-  .left p {
-    font-size: 16px;
-    font-weight: 300;
-  }
-
 
   .video-container {
     width: 100%;
-    /* full width video container */
     height: auto;
     position: relative;
   }
@@ -988,80 +1020,67 @@ textarea {
     transform: translate(-50%, -50%);
   }
 
-  .image-gallery {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-  /* 2. Show only one image in gallery */
-  .image-gallery img {
+  .video-bg-controls {
     display: none;
-
   }
 
-  .image-gallery img:nth-of-type(2) {
-    display: block;
-    width: 90%;
-    /* Or 100% for full width */
-    height: auto;
-    object-fit: cover;
-
+  .btn {
+    flex-direction: row;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0;
   }
 
+  .btn1,
+  .btn2 {
+    width: 50%;
+    margin: 0 !important;
+    border-radius: 0;
+  }
 
-  /* Hide arrows in image gallery */
+  /* ====== GALLERY ====== */
+.image-gallery {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+  .image-gallery .gallery-img {
+    display: none;
+  }
+.image-gallery .gallery-img:nth-of-type(1) {
+  display: block;
+   width: 100%;
+  height: 80vh;               /* Take 80% of viewport height */
+  object-fit: cover;                /* Keep aspect ratio */
+  margin: 0 auto;             /* Center horizontally */
+  border: 4px solid #35554b;
+  box-sizing: border-box;
+}
+
+
+
+
   .image-gallery .arrow {
-    display: none;
+    display: none !important;
   }
 
-
-
-  .cards .card {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  /* Move side-card below zig-zag */
-  .gallery-cards-wrapper {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  /* Side card full width and margin spacing */
-  .side-card {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  /* Optional: Adjust heading and event styles for mobile */
-  .heading-card {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .event-list {
-    gap: 10px;
-  }
-
+  /* ====== ZIG-ZAG SECTION ====== */
   .zig-zag {
     flex-direction: column;
     align-items: center;
-    /* Horizontally center children */
     justify-content: center;
     width: 100%;
     padding: 20px;
-    /* adds equal space around */
     height: auto;
     margin: 20px 0;
     text-align: center;
-    /* Center text inside content block */
   }
 
   .zig-img,
@@ -1080,22 +1099,85 @@ textarea {
   .zig-bg1,
   .zig-bg2 {
     align-items: center;
-    /* center content inside the box */
     text-align: center;
   }
 
+  /* ====== CARDS & SIDE CARD ====== */
+  .cards .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .gallery-cards-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .side-card {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .heading-card {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .event-list {
+    gap: 10px;
+  }
+
+  /* ====== CONTENT FLEX (IMAGE + TEXT) ====== */
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    height: auto;
+  }
+
+  .right {
+    order: 1;
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .right img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .left {
+    order: 2;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .left h1 {
+    font-size: 22px;
+    text-align: start;
+  }
+
+  .left p {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: start;
+  }
+
+  /* ====== NEWSLETTER FORM ====== */
   .newsletter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* centers items horizontally */
     justify-content: center;
-    /* centers items vertically (optional) */
     width: 100%;
     padding: 20px 15px;
-    /* spacing inside */
     gap: 20px;
-    /* space between children */
     height: auto;
   }
 
@@ -1119,14 +1201,12 @@ textarea {
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    /* Remove any extra padding */
     gap: 20px;
   }
 
   .newsletter .field {
     width: 100%;
     max-width: 400px;
-    /* optional max width */
     margin: 0 auto;
   }
 
@@ -1134,18 +1214,13 @@ textarea {
     display: flex;
     align-items: start;
     gap: 10px;
-    /* smaller gap between label and radios */
     width: auto;
-    /* remove fixed width to avoid extra space */
     margin: 0;
-    /* remove any default margin */
     padding: 0;
-    /* remove padding */
   }
 
-  .gender-row>label {
+  .gender-row > label {
     min-width: 70px;
-    /* fixed label width for alignment */
     font-weight: 600;
     color: white;
     margin: 0;
@@ -1155,7 +1230,6 @@ textarea {
   .gender {
     display: flex;
     gap: 15px;
-    /* small gap between radios */
     align-items: start;
     margin: 0;
     padding: 0;
@@ -1165,7 +1239,6 @@ textarea {
     margin: 0;
     padding: 0;
     white-space: nowrap;
-    /* prevent line-break in radio labels */
   }
 
   .gender input[type="radio"] {
@@ -1174,10 +1247,10 @@ textarea {
     margin-right: 5px;
   }
 
+  /* ====== FOOTER ====== */
   .footer {
     position: relative;
     z-index: 10;
-    /* ensure footer is above anything else */
     padding: 20px 15px;
     box-sizing: border-box;
   }
@@ -1192,12 +1265,10 @@ textarea {
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
-    /* allow icons to wrap */
   }
 
   .footer .icons img {
     width: auto;
-    /* smaller icons for mobile */
     height: auto;
   }
 
@@ -1209,9 +1280,54 @@ textarea {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
 
-  /* ✅ Show only first 3 images in gallery */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* ✅ Gallery Cards Layout */
+  .gallery-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* ✅ Cards Grid: 2 in first row, 1 in second */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .cards .card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  .cards .card:nth-child(3) {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .side-card {
+    width: 250px;
+  }
+
+  /* ✅ Image Gallery: Show 3 specific images */
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .image-gallery img {
     display: none;
   }
@@ -1223,122 +1339,105 @@ textarea {
     width: 120px;
     height: 120px;
     object-fit: cover;
-  }
-  .video-bg-controls{
-    display: none;
+    border: 4px solid #35554b;
   }
 
   .image-gallery .arrow {
     display: none;
   }
 
-  /* ✅ 2 cards in first row, 1 card in second row */
-  .cards {
+  /* ✅ Zig-zag Layout (Image Left, Text Right) */
+  .zig-zag {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-
-  .cards .card {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
-
-
-  /* ✅ Keep side card layout as it is */
-  .gallery-cards-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 40px 40px;
-  }
-
-  .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .side-card {
-    width: 250px;
-  }
-
-  /* Optional: Reduce .content padding in hero section */
-  .content {
-    padding: 30px;
     flex-direction: row;
     align-items: center;
-    text-align: center;
-  }
-
-  .left,
-  .right {
-    max-width: 100%;
+    justify-content: space-between;
+    text-align: left;
+    padding: 40px;
+    gap: 40px;
     width: 100%;
-    text-align: start;
-  }
-
-  .right img {
-    margin: 0 auto;
-  }
-
-  /* Zig-zag blocks stack vertically */
-  .zig-zag {
-    flex-direction: column;
-    width: 100%;
-    margin: 20px 0;
-    height: auto;
   }
 
   .zig-img,
   .zig-bg1,
   .zig-bg2 {
-    width: 65%;
+    width: 50%;
     height: auto;
+  }
+
+  .zig-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   .zig-bg1,
   .zig-bg2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* ✅ Newsletter Adjustments */
+  .newsletter {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 15px;
+    gap: 20px;
   }
 
-  /* Newsletter */
- .newsletter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;         /* ✅ already good */
-  justify-content: center;     /* ✅ already good */
-  width: 100%;
-  padding: 20px 15px;
-  gap: 20px;
-  height: auto;
+  .newsletter .row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .newsletter .input {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .newsletter .field {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ✅ Hero Section Layout (Image + Text Side by Side) */
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .left,
+  .right {
+    max-width: 100%;
+    width: 50%;
+  }
+
+  .right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .video-bg-controls {
+    display: none;
+  }
 }
 
-.newsletter .row {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  align-items: center;
-}
-
- .newsletter .input {
-  max-width: 600px;            /* ✅ ensures it doesn't stretch too wide */
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  gap: 20px;
-}
-
-.newsletter .field {
-  width: 100%;
-  max-width: 600px;  /* Adjust width for balance */
-  margin: 0 auto;
-}
-}
 
 
 /* =============== Sticky Bars on Desktop =============== */
@@ -1365,32 +1464,7 @@ textarea {
     height: 65px;
   }
 
-/* =============== Sticky Bars on Desktop =============== */
 
-@media (min-width: 1025px) {
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 50px;
-  }
-
-  .logo-div {
-    position: sticky;
-    top: 50px; /* height of .nav */
-    z-index: 1001;
-    height: 75px; /* match your actual height */
-  }
-
-  .search-bar {
-    position: sticky;
-    top: 125px; /* 50 (nav) + 75 (logo-div) */
-    z-index: 1002;
-    height: 65px;
-  }
-
-
-}
 
 }
 

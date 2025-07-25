@@ -2,47 +2,65 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adidas Racing | Events, Tracks & News</title>
+
+  <meta name="description" content="Explore Adidas racing tracks, live events, latest gear, and more." />
+  <meta name="keywords" content="Adidas, Racing, Events, Tracks, Gear" />
+  <meta name="author" content="Adidas Team" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
-
+  <!-- ✅ Notification Bar -->
   <div class="nav" id="top-nav">
-    <p>LIVE RACE STREAM FROM GATOR NATIONALS IN SARASOTA, FL <a href="">/ WATCH N</a></p>
-    <img src="./Slicing/menu-close-icon.png" alt="" id="close-nav">
+    <p>LIVE RACE STREAM FROM GATOR NATIONALS IN SARASOTA, FL <a href="#">/ WATCH NOW</a></p>
+    <img src="./Slicing/menu-close-icon.png" alt="Close Menu" id="close-nav">
   </div>
-  <div class="logo-div">
-    <img src="./Slicing/logo.png" class="logo-icon" alt="">
-    <img src="./Slicing/burger-icon.png" class="menu-icon" alt="Menu Icon" />
+
+  <!-- ✅ Header -->
+  <header class="logo-div">
+    <img src="./Slicing/logo.png" class="logo-icon" alt="Adidas Logo" />
+    <img src="./Slicing/burger-icon.png" class="menu-icon" alt="Open Mobile Menu" />
     <div class="btn">
-      <button class="btn1">MEMBERSHIP</button>
-      <button class="btn2">ACCOUNT</button>
+      <button class="btn1"><span>MEMBERSHIP</span></button>
+      <button class="btn2"><span>ACCOUNT</span></button>
+
     </div>
-  </div>
-  <div class="search-bar">
+  </header>
+
+  <!-- ✅ Navigation -->
+  <nav class="search-bar">
     <div class="p">
-      <p>OUR TRACKS</p>
-      <p>FIND EVENTS</p>
-      <p>TRACK MAP</p>
-      <p>SHOP</p>
-      <p>ABOUT US</p>
+      <p><a href="#" class="nav-btn"><span>OUR TRACKS</span></a></p>
+      <p><a href="#" class="nav-btn"><span>FIND EVENTS</span></a></p>
+      <p><a href="#" class="nav-btn"><span>TRACK MAP</span></a></p>
+      <p><a href="#" class="nav-btn"><span>SHOP</span></a></p>
+      <p><a href="#" class="nav-btn"><span>ABOUT US</span></a></p>
+
     </div>
-    <div class="search-container">
-      <input class="search" type="text" placeholder="Search">
-      <img src="./Slicing/search-icon.png" alt="search icon">
-    </div>
-  </div>
+
+    <form class="search-container" action="#" method="GET">
+      <input class="search" type="text" name="query" placeholder="Search" aria-label="Search" />
+      <img src="./Slicing/search-icon.png" alt="Search Icon" />
+      </button>
+    </form>
+  </nav>
+
+
+  <!-- ✅ Mobile Menu -->
   <div class="search-container-mb" id="searchContainerMb">
-    <input class="search" type="text" placeholder="SEARCH">
-    <img src="./Slicing/search-icon.png" alt="search icon">
+    <input class="search" type="text" placeholder="SEARCH" />
+    <img src="./Slicing/search-icon.png" alt="search icon" />
   </div>
   <ul class="mobile-menu">
     <li><a href="#">OUR TRACKS</a></li>
@@ -52,183 +70,131 @@
     <li><a href="#">ABOUT US</a></li>
   </ul>
 
-
-
-  <div class="home-bar">
+  <!-- ✅ Home Banner -->
+  <section class="home-bar">
     <h1>HOME PAGE</h1>
     <div class="right-half">
       <div class="partnership">
         <p>PARTNERSHIP BY</p>
-        <img src="./Slicing/reebok-logo.png" alt="Reebok Logo">
+        <img src="./Slicing/reebok-logo.png" alt="Reebok Logo" />
       </div>
     </div>
+  </section>
+
+  <!-- ✅ Hero Section -->
+  <section class="video-hero">
+  <div class="overlay"></div>
+
+  <!-- Arrows -->
+  <div class="video-bg-controls">
+    <img src="./Slicing/hero-slider-leftt-arrow.png" alt="Previous Background" class="arrow-icon left-arrow" id="prevBg" />
+    <img src="./Slicing/hero-slider-right-arrow.png" alt="Next Background" class="arrow-icon right-arrow" id="nextBg" />
+    
   </div>
 
-  <div class="video-hero">
-    <div class="overlay"></div>
-    <div class="video-bg-controls">
-      <img src="./Slicing/hero-slider-leftt-arrow.png" alt="Left Arrow" class="arrow-icon left-arrow" id="prevBg" />
-      <img src="./Slicing/hero-slider-right-arrow.png" alt="Right Arrow" class="arrow-icon right-arrow" id="nextBg" />
+  <!-- Slide Content -->
+  <div class="content">
+    <div class="left">
+      <h1 id="heroHeading">GET READY FOR NEW ADIDAS BANDS</h1>
+      <p id="heroParagraph">Adidas tracks all begin with a starting gate and end with a finish line, but everything in between varies from track to track.</p>
     </div>
-
-
-    <div class="content">
-      <div class="left">
-        <h1>GET READY FOR NEW ADIDAS BANDS</h1>
-        <p>Adidas tracks all begin with a starting gate and end with a finish line, but everything in between varies
-          from track to track. Because no two tracks are alike, this action sport keeps you on your toes wherever you
-          are racing.</p>
-      </div>
-      <div class="right">
-        <div class="video-container">
-          <img src="./Slicing/video-thumbnail-img.png" alt="Shoe Image">
-          <div class="play-icon">
-            <img src="./Slicing/play-icon.png" alt="">
-          </div>
+    <div class="right">
+      <div class="video-container">
+        <img id="heroThumbnail" src="./Slicing/video-thumbnail-img.png" alt="Shoe Image" />
+        <div class="play-icon" id="playIcon">
+          <img src="./Slicing/play-icon.png" alt="Play Video" />
         </div>
       </div>
     </div>
-    <!-- YOUTUBE MODAL -->
-    <div class="video-modal" id="videoModal">
-      <div class="video-content">
-        <span class="close-btn" id="closeModal">&times;</span>
-        <iframe id="youtubeFrame" width="2000" height="1500" src="" frameborder="0" allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-
   </div>
 
-  <div class="gallery-cards-wrapper">
+    <!-- ✅ Slide Indicator Bar -->
+  <div class="slide-indicator" id="slideIndicator"></div>
+  <!-- ✅ Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <iframe id="youtubeFrame" width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ✅ Gallery & Cards Section -->
+  <!-- Inside your main content HTML -->
+  <section class="gallery-cards-wrapper">
     <div class="main-content">
       <div class="image-gallery">
+        <!-- Keep your arrows static -->
         <img src="./Slicing/hero-slider-leftt-arrow.png" alt="" class="arrow left">
-        <img src="./Slicing/thubnail-slider-img.png" alt="Image 1">
-        <img src="./Slicing/thubnail-slider-img.png" alt="Image 2">
-        <img src="./Slicing/thubnail-slider-img.png" alt="Image 3">
-        <img src="./Slicing/thubnail-slider-img.png" alt="Image 4">
         <img src="./Slicing/hero-slider-right-arrow.png" alt="" class="arrow right">
-
       </div>
       <hr>
-      <div class="cards">
-        <div class="card">
-          <img src="./Slicing/post-img.png" alt="Card Image">
-          <div class="card-text">
-            <h2 class="heading">2019 NATIONAL CHAMPIONS CROWNED AT Reebok</h2>
-            <p class="text">Membership has its perks. Joining ADIDAS means you can race at </p>
-          </div>
-          <button>READ MORE</button>
-        </div>
-
-
-        <div class="card">
-          <img src="./Slicing/post-img.png" alt="Card Image">
-          <div class="card-text">
-            <h2 class="heading">2019 NATIONAL CHAMPIONS CROWNED AT Reebok</h2>
-            <p class="text">Membership has its perks. Joining ADIDAS means you can race at </p>
-          </div>
-          <button>READ MORE</button>
-        </div>
-
-        <div class="card">
-          <img src="./Slicing/post-img.png" alt="Card Image">
-          <div class="card-text">
-            <h2 class="heading">2019 NATIONAL CHAMPIONS CROWNED AT Reebok</h2>
-            <p class="text">Membership has its perks. Joining ADIDAS means you can race at </p>
-          </div>
-          <button>READ MORE</button>
-        </div>
-
-
-      </div>
+      <div class="cards" id="cardContainer"></div>
     </div>
 
     <div class="side-card">
       <h3 class="heading-card">EVENTS</h3>
+      <div class="event-list" id="eventContainer"></div>
+    </div>
+  </section>
 
-      <div class="event-list">
-        <div class="event-item">
-          <div class="event-number">1</div>
-          <div class="event-info">
-            <p class="event-title">SHOW IN USA</p>
-            <hr>
-            <p class="event-location">USA</p>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-number">2</div>
-          <div class="event-info">
-            <p class="event-title">ADIDAS COLLAB</p>
-            <hr>
-
-            <p class="event-location">USA</p>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-number">3</div>
-          <div class="event-info">
-            <p class="event-title">CHAMPIONSHIP</p>
-            <hr>
-
-            <p class="event-location">USA</p>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-number">4</div>
-          <div class="event-info">
-            <p class="event-title">TRACK OPENING</p>
-            <hr>
-
-            <p class="event-location">USA</p>
-          </div>
-        </div>
+<!-- ✅ Section 1 - Image then Text -->
+<section class="zig-zag">
+  <div class="zig-zag-container">
+    <div class="zig-img clipped-left">
+      <img src="./Slicing/zig-zag-img-1.png" alt="Champion Image 1" />
+    </div>
+    <div class="zig-text clipped-right">
+      <div class="zig-inner">
+        <h2>2019 NATIONAL CHAMPIONS CROWNED AT REEBOK</h2>
+        <p>Membership has its perks. Joining ADIDAS means you can race at top events.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="zig-zag">
-    <div class="zig-img">
-      <img src="./Slicing/zig-zag-img-1.png" alt="">
-    </div>
-    <div class="zig-bg1">
-      <h2>2019 NATIONAL CHAMPIONS CROWNED AT Reebok</h2>
-      <p>Membership has its perks. Joining ADIDAS means you can race at </p>
+
+<!-- ✅ Section 2 - Text then Image (reversed order, cuts also reversed) -->
+<section class="zig-zag reverse">
+  <div class="zig-text clipped-left">
+    <div class="zig-inner">
+      <h2>JOIN OUR GLOBAL TRACKS</h2>
+      <p>Train, compete, and celebrate the culture of track sports with Adidas.</p>
     </div>
   </div>
-
-  <div class="zig-zag reverse">
-    <div class="zig-bg2">
-      <h2>2019 NATIONAL CHAMPIONS CROWNED AT Reebok</h2>
-      <p>Membership has its perks. Joining ADIDAS means you can race at </p>
-    </div>
-    <div class="zig-img">
-      <img src="./Slicing/zig-zag-img-2.png" alt="">
-    </div>
+  <div class="zig-img clipped-right">
+    <img src="./Slicing/zig-zag-img-2.png" alt="Champion Image 2" />
   </div>
+</section>
 
-  <div class="newsletter">
+
+
+
+  <!-- ✅ Newsletter Form -->
+  <section class="newsletter">
     <p>GET IN TOUCH WITH US</p>
     <form class="input">
       <div class="row">
         <div class="field">
           <label for="name">NAME</label>
-          <input type="text" id="name" placeholder="enter name" />
+          <input type="text" id="name" name="name" placeholder="Enter name" required />
         </div>
         <div class="field">
           <label for="email">EMAIL</label>
-          <input type="email" id="email" placeholder="enter email" />
+          <input type="email" id="email" name="email" placeholder="Enter email" required />
         </div>
       </div>
 
       <div class="row">
         <div class="field">
           <label for="country">COUNTRY</label>
-          <input type="text" id="country" placeholder="enter country" />
+          <input type="text" id="country" name="country" placeholder="Enter country" />
         </div>
         <div class="field">
           <label for="state">STATE</label>
-          <select id="state">
+          <select id="state" name="state">
+            <option value="">Select State</option>
             <option value="USA">USA</option>
             <option value="UK">UK</option>
             <option value="US">US</option>
@@ -248,35 +214,36 @@
 
       <div class="row">
         <div class="field full">
-          <label for="country">COUNTRY</label>
-          <textarea id="message" placeholder="Message"></textarea>
+          <label for="message">MESSAGE</label>
+          <textarea id="message" name="message" placeholder="Type your message..."></textarea>
         </div>
       </div>
 
       <div class="submit-row">
-        <button class="submit-btn">SUBMIT</button>
+        <button class="submit-btn" type="submit">SUBMIT</button>
       </div>
     </form>
-  </div>
+  </section>
 
-  <div class="footer">
+  <!-- ✅ Footer -->
+  <footer class="footer">
     <div class="p">
-      <p>OUR TRACKS /</p>
-      <p>FIND EVENTS /</p>
-      <p>TRACK MAP /</p>
-      <p>SHOP /</p>
-      <p>ABOUT US </p>
+      <p><a href="#">OUR TRACKS</a></p>
+      <p><a href="#">FIND EVENTS</a></p>
+      <p><a href="#">TRACK MAP</a></p>
+      <p><a href="#">SHOP</a></p>
+      <p><a href="#">ABOUT US</a></p>
     </div>
     <div class="icons">
-      <img src="./Slicing/facebook-icon.png" alt=""><img src="./Slicing/twitter-icon.png" alt=""><img
-        src="./Slicing/instagram-icon.png" alt=""><img src="./Slicing/linkedin-icon.png" alt="">
+      <img src="./Slicing/facebook-icon.png" alt="Facebook Icon" />
+      <img src="./Slicing/twitter-icon.png" alt="Twitter Icon" />
+      <img src="./Slicing/instagram-icon.png" alt="Instagram Icon" />
+      <img src="./Slicing/linkedin-icon.png" alt="LinkedIn Icon" />
     </div>
-    <div>
-      <p class="copyright">© copyright 2020 Adidas</p>
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <p class="copyright">© 2025 Adidas. All rights reserved.</p>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
